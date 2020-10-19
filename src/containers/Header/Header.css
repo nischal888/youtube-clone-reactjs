@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+.header__logo {
+  height: 30px;
+  object-fit: contain; /* This is basically works 
+  for images other than svg. good to know property*/
+  margin-left: 15px;
+}
+.header__input {
+  width: 40%;
+  border: 1px solid lightgray;
+}
+.header__input > input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+.header__inputButton {
+  width: 50px !important;
+  background: #fafafa;
+  border-left: 1px solid lightgray;
+  color: gray;
+}
+.header___iconMargin {
+  margin-right: 8px;
+}
+
+.header__left,
+.header__input,
+.header__right {
+  display: flex;
+  align-items: center;
+}
