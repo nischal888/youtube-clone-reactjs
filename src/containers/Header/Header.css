@@ -29,6 +29,7 @@
   background: #fafafa;
   border-left: 1px solid lightgray;
   color: gray;
+  cursor: pointer;
 }
 .header___iconMargin {
   margin-right: 8px;

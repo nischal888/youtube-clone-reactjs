@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import { getPopularVideos } from "./store/actions";
 import RecommendedVideosComponent from "./components";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ getPopularVideosReducer }) => {
   return {
-    popularVideos: state.popularVideos,
-    token: state.token,
-    pageInfo: state.pageInfo,
+    popularVideos: getPopularVideosReducer.popularVideos,
+    token: getPopularVideosReducer.token,
+    pageInfo: getPopularVideosReducer.pageInfo,
   };
 };
 const mapDispatchToProps = {

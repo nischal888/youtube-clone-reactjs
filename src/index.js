@@ -3,26 +3,31 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router } from "react-router-dom";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import getPopularVideosReducer from "./containers/RecommendedVideos/store/reducer";
+import searchYoutubeVideoReducer from "./containers/Search/store/reducer";
 import { Provider } from "react-redux";
 import rootSaga from "./sagas";
 
-// const rootReducer = combineReducers({
-//   getPopularVideosReducer,
-// });
+const rootReducer = combineReducers({
+  getPopularVideosReducer,
+  searchYoutubeVideoReducer,
+});
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
-  getPopularVideosReducer,
+  rootReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
