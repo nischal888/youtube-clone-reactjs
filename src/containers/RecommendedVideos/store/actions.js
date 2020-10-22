@@ -12,3 +12,8 @@ export const getPopularVideosSuccess = (payload) => {
     payload,
   };
 };
+export const resetVideosFlag = () => {
+  return {
+    type: ActionTypes.RESET_VIDEO_FlAG,
+  };
+};

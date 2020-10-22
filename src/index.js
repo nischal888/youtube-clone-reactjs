@@ -1,17 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./containers/App/App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import getPopularVideosReducer from "./containers/RecommendedVideos/store/reducer";
 import searchYoutubeVideoReducer from "./containers/Search/store/reducer";
+import AppReducer from "./containers/App/store/reducer";
 import { Provider } from "react-redux";
 import rootSaga from "./sagas";
 
 const rootReducer = combineReducers({
+  AppReducer,
   getPopularVideosReducer,
   searchYoutubeVideoReducer,
 });

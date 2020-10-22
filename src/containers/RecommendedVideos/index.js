@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getPopularVideos } from "./store/actions";
+import { getPopularVideos, resetVideosFlag } from "./store/actions";
 import RecommendedVideosComponent from "./components";
 
 const mapStateToProps = ({ getPopularVideosReducer }) => {
@@ -11,6 +11,7 @@ const mapStateToProps = ({ getPopularVideosReducer }) => {
 };
 const mapDispatchToProps = {
   getPopularVideos,
+  resetVideosFlag,
 };
 const RecommendedVideos = RecommendedVideosComponent;
 export default connect(mapStateToProps, mapDispatchToProps)(RecommendedVideos);

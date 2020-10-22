@@ -32,6 +32,9 @@ class RecommendedVideosComponent extends Component {
       },
     });
   };
+  componentWillUnmount() {
+    this.props.resetVideosFlag();
+  }
   render() {
     const { popularVideos, pageInfo, token } = this.props;
 

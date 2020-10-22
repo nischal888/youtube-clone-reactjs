@@ -17,6 +17,11 @@ const getPopularVideosReducer = (state = initialState, action) => {
         token: nextPageToken,
         pageInfo: pageInfo,
       };
+    case ActionTypes.RESET_VIDEO_FlAG:
+      return {
+        ...state,
+        popularVideos: [],
+      };
     default:
       return state;
   }

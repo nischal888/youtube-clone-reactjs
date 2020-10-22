@@ -21,14 +21,18 @@ class HeaderComponent extends React.Component {
   };
 
   onSearchSubmit = () => {
-    this.props.searchYoutubeVideo(this.state.searchQuery);
-    this.props.history.push(`/search/${this.state.searchQuery}`);
+    if (this.state.searchQuery !== "") {
+      this.props.searchYoutubeVideo(this.state.searchQuery);
+      this.setState({
+        searchQuery: "",
+      });
+      this.props.history.push(`/search/${this.state.searchQuery}`);
+    }
     // return <Redirect to={`/search/${this.state.searchQuery}`} />;
   };
   onEnterKey = (e) => {
     if (e.keyCode === 13) {
-      this.props.searchYoutubeVideo(this.state.searchQuery);
-      this.props.history.push(`/search/${this.state.searchQuery}`);
+      this.onSearchSubmit();
     }
   };
 
