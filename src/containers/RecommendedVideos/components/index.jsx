@@ -16,6 +16,7 @@ class RecommendedVideosComponent extends Component {
   };
 
   componentDidMount() {
+    console.log("keys error");
     this.props.getPopularVideos();
   }
   handleClose = () => {
@@ -43,8 +44,10 @@ class RecommendedVideosComponent extends Component {
         {pageInfo && (
           <InfiniteScroll
             pageStart={0}
-            hasMore={pageInfo.totalResults >= popularVideos.length}
-            loadMore={() => this.props.getPopularVideos(token)}
+            hasMore={pageInfo.totalResults > popularVideos.length}
+            loadMore={() => {
+              this.props.getPopularVideos(token);
+            }}
             loader={
               <Spin
                 indicator={antIcon}

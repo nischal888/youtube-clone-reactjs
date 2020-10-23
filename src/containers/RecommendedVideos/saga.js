@@ -1,6 +1,7 @@
 import { put, call, takeEvery, takeLatest } from "redux-saga/effects";
 import * as Apis from "./apis";
 import * as action from "./store/actions";
+import * as GlobalAction from "../../actions";
 import ActionTypes from "./store/constants";
 import { wrapByLoader } from "../../utility";
 
@@ -14,8 +15,12 @@ import { wrapByLoader } from "../../utility";
 function* getPopularVideosSaga({ token }) {
   const response = yield call(Apis.getPopularVideosApi, token);
   const data = yield response.json();
-  yield put(action.getPopularVideosSuccess(data));
+  if (!data.error) {
+    yield put(action.getPopularVideosSuccess(data));
+  } else {
+    yield put(GlobalAction.errorOccured(data));
+  }
 }
 export default [
-  takeEvery(ActionTypes.GET_POPULAR_VIDEOS, getPopularVideosSaga),
+  takeLatest(ActionTypes.GET_POPULAR_VIDEOS, getPopularVideosSaga),
 ];

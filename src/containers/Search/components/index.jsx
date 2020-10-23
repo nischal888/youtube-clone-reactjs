@@ -25,6 +25,9 @@ class SearchComponents extends React.Component {
       },
     });
   };
+  componentWillUnmount() {
+    this.props.resetSearchFlag();
+  }
   render() {
     const { searchVideo } = this.props;
     return (

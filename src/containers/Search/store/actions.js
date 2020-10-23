@@ -12,3 +12,9 @@ export const searchYoutubeVideoSuccess = (payload) => {
     payload,
   };
 };
+export const resetSearchFlag = (payload) => {
+  return {
+    type: ActionTypes.RESET_SEARCH_FLAG,
+    payload,
+  };
+};

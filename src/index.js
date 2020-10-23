@@ -9,6 +9,7 @@ import createSagaMiddleware from "redux-saga";
 import getPopularVideosReducer from "./containers/RecommendedVideos/store/reducer";
 import searchYoutubeVideoReducer from "./containers/Search/store/reducer";
 import AppReducer from "./containers/App/store/reducer";
+import ErrorHandleReducer from "./containers/ErrorHandler/reducer";
 import { Provider } from "react-redux";
 import rootSaga from "./sagas";
 
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   AppReducer,
   getPopularVideosReducer,
   searchYoutubeVideoReducer,
+  ErrorHandleReducer,
 });
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
