@@ -5,7 +5,7 @@ import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { Spin } from "antd";
 import RecommendedVideos from "../RecommendedVideos";
-import { Switch, Redirect, Link, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import ErrorHandle from "../ErrorHandler";
 import Search from "../Search";
 

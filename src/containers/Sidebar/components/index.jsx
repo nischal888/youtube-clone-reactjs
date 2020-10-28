@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../Sidebar.css";
 import SidebarRow from "./SidebarRow";
+import { Link } from "react-router-dom";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import HomeIcon from "@material-ui/icons/Home";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
@@ -14,7 +15,9 @@ class SidebarComponent extends Component {
   render() {
     return (
       <div className="sidebar">
-        <SidebarRow selected Icon={HomeIcon} title="Home" />
+        <Link to="/">
+          <SidebarRow selected Icon={HomeIcon} title="Home" />
+        </Link>
         <SidebarRow Icon={WhatshotIcon} title="Trending" />
         <SidebarRow Icon={SubscriptionsIcon} title="Subscription" />
         <hr />

@@ -1,9 +1,8 @@
-import { put, call, takeEvery, takeLatest } from "redux-saga/effects";
+import { put, call, takeLatest } from "redux-saga/effects";
 import * as Apis from "./apis";
 import * as action from "./store/actions";
 import * as GlobalAction from "../../actions";
 import ActionTypes from "./store/constants";
-import { wrapByLoader } from "../../utility";
 
 // const getPopularVideosSaga = ({ token }) =>
 //   wrapByLoader(function* () {

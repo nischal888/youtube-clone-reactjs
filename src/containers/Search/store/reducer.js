@@ -1,5 +1,4 @@
 import ActionTypes from "./constants";
-import { actionChannel } from "redux-saga/effects";
 
 const initialState = {
   searchVideo: [],

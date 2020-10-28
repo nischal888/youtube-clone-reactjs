@@ -11,6 +11,9 @@ class SearchComponents extends React.Component {
       videoTitle: "",
     },
   };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   handleClose = () => {
     this.setState({
       modelToggle: !this.state.modelToggle,

@@ -16,7 +16,6 @@ class RecommendedVideosComponent extends Component {
   };
 
   componentDidMount() {
-    console.log("keys error");
     this.props.getPopularVideos();
   }
   handleClose = () => {
