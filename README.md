@@ -1,5 +1,10 @@
 The nearly close to Youtube Clone app has features such as video search, most popular videos which is fetched directly from youtube api. The applciation is built in React JS
 
+
+## Demo link
+
+  https://clone-bb547.web.app
+  
 ## Installation
 
  - git clone https://github.com/nischal888/youtube-clone-reactjs.git
